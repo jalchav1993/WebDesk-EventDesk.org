@@ -1,0 +1,47 @@
+
+{
+  "name": "EventDesk",
+  "version": "0.091",
+  "description": "Website Content Manegement System using modern single page app client",
+  "author": "Jesus Chavez jachavez21@miners.utep.edu",
+  "contributors": [{
+    "name":"Jesus Chavez",
+    "email":"jachavez21@miners.utep.edu"
+  }],
+  "bin": {
+    "module-name": "./bin/EventDesk"
+  },
+  "scripts": {
+    "test": "vows --spec --isolate",
+    "start": "node index.js",
+    "predeploy": "echo im about to deploy",
+    "postdeploy": "echo ive deployed",
+    "prepublish": "coffee --bare --compile --output lib/EventServe src/EventServe/*.coffee"
+  },
+  "main": "lib/EventServe.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jalchav1993/WebDesk.EventDesk.org"
+  },
+  "bugs": {
+    "url": "hhttps://github.com/jalchav1993/WebDesk.EventDesk.org/issues"
+  },
+  "keywords": [
+  "spa",
+  "meanstack",
+  "npm"
+],
+  "dependencies": {
+    "express": "4.2.x"
+  },
+  "devDependencies": {
+    "vows": "^0.7.0",
+    "assume": "<1.0.0 || >=2.3.1 <2.4.5 || >=2.5.2 <3.0.0",
+    "pre-commit": "*"
+  },
+  "preferGlobal": true,
+  "private": true,
+  "subdomain": "EventDesk",
+  "analyze": true,
+  "license": "MIT"
+}
