@@ -8,7 +8,7 @@
   var methodOverride = require('method-override');              // simulate DELETE and PUT (express4)
 
 // configuration 
-  mongoose.connect('mongodb://localhost/EventDesk');     // connect
+  mongoose.connect('mongodb://localhost/api/gui/menu');     // connect
 
   app.use(express.static(__dirname + '/public'));                 // set the static files location: 
 								  ///public/img will be /img for users
@@ -18,14 +18,14 @@
   app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
   app.use(methodOverride());
 // define model
-  var MenuItem = mongoose.model('MenuItem', {
+  var MenuItem = mongoose.model('menuItems', {
     title : String,
     goUrl: String,
     apiRes: String
   });
 //routing
 // get all todos
-  app.get('/api/todos', function(req, res) {
+  app.get('/api/gui/menu/menuItems', function(req, res) {
     // use mongoose to get all todos in the database
     Todo.find(function(err, todos) {
       if (err)
@@ -33,7 +33,7 @@
       res.json(todos);                                            // return all todos in JSON format
      });
   });
-  app.post('/api/todos', function(req, res) {                     // create todo and send back all todos 
+  app.post('/api/gui/menu/menuItems', function(req, res) {        // create todo and send back all todos 
                                                                   // after creation
     Todo.create({                                                 // create a todo, information comes from AJAX   
       text : req.body.text,                                       // request from Angular
@@ -50,7 +50,7 @@
     });
 
     // delete a todo
-    app.delete('/api/todos/:todo_id', function(req, res) {
+    app.delete('/api/gui/menu/menuItems:menuItem_id', function(req, res) {
       Todo.remove({
         _id : req.params.todo_id
       }, function(err, todo) {
