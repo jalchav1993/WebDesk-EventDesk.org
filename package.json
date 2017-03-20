@@ -10,8 +10,11 @@
     "postinstall": "bower install"
   },
   "dependencies": {
-    "express": "^4.13.3",
-    "bower": "*"
+    "express": "*",
+    "bower": "*",
+    "method-override": "*",
+    "mongoose": "*",
+    "morgan": "*"
   },
   "devDependencies": {
     "grunt": "*",
