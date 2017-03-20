@@ -1,24 +1,43 @@
 {
   "name": "WebDesk.EventDesk.org",
   "version": "0.9.0",
+  "namelower": "WebDesk.EventDesk.org.EventDeskGUI",
   "description": "Website Content Manegement System using modern single page app client",
   "main": "index.js",
+  "readme": "README.md",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "postinstall": "bower install"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "bower": "*"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-nodeunit": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-jsdoc": "*",
+    "grunt-exec": "*",
+    "grunt-karma": "*",
+    "karma": "*",
+    "karma-jasmine": "*",
+    "karma-phantomjs-launcher": "*"
   },
   "engines": {
-    "node": "4.0.0"
+    "node": "*"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/jalchav1993/WebDesk.EventDesk.org"
   },
   "keywords": [
-    "spa",
-    "meanstack",
+    "SinglePageApp",
+    "mean stack",
     "npm"
   ],
   "author": "Jesus Chavez <jachavez21@miners.utep.edu",
