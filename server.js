@@ -18,49 +18,52 @@
   app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
   app.use(methodOverride());
 // define model
-  var MenuItem = mongoose.model('menuItems', {
+  var menuItem = mongoose.model('menuItem', {
     title : String,
     goUrl: String,
     apiRes: String
   });
 //routing
-// get all todos
-  app.get('/api/gui/menu/menuItems', function(req, res) {
-    // use mongoose to get all todos in the database
-    Todo.find(function(err, todos) {
+// get all menuItems
+  app.get('/api/gui/menu/menuItem', function(req, res) {
+    console.log("get");
+    // use mongoose to get all menuItems in the database
+    menuItem.find(function(err, menuItems) {
       if (err)
         res.send(err)
-      res.json(todos);                                            // return all todos in JSON format
+      res.json(menuItems);                                            // return all menuItems in JSON format
      });
   });
-  app.post('/api/gui/menu/menuItems', function(req, res) {        // create todo and send back all todos 
+  app.post('/api/gui/menu/menuItem', function(req, res) {        // create menuItem and send back all menuItems 
                                                                   // after creation
-    Todo.create({                                                 // create a todo, information comes from AJAX   
+    console.log("put");
+    menuItem.create({                                                 // create a menuItem, information comes from AJAX   
       text : req.body.text,                                       // request from Angular
       done : false
-    }, function(err, todo) {
+    }, function(err, menuItem) {
          if (err)
            res.send(err);
-         Todo.find(function(err, todos) {
+         menuItem.find(function(err, menuItems) {
            if (err)
              res.send(err)
-           res.json(todos);
+           res.json(menuItems);
          });
        });
     });
 
-    // delete a todo
-    app.delete('/api/gui/menu/menuItems:menuItem_id', function(req, res) {
-      Todo.remove({
-        _id : req.params.todo_id
-      }, function(err, todo) {
+    // delete a menuItem
+    app.delete('/api/gui/menu/menuItem:menuItem_id', function(req, res) {
+      console.log("delete");
+      menuItem.remove({
+        _id : req.params.menuItem_id
+      }, function(err, menuItem) {
            if (err)
              res.send(err);
-           // get and return all the todos after you create another
-           Todo.find(function(err, todos) {
+           // get and return all the menuItems after you create another
+           menuItem.find(function(err, menuItems) {
              if (err)
                res.send(err)
-             res.json(todos);
+             res.json(menuItems);
             });
          });
     });
