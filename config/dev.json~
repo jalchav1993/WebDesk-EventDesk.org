@@ -1,0 +1,13 @@
+{
+  "api.dev.guicomponents.menu.menuitem": {
+    "dbConfig": {
+      "host": "localhost.localdomain",
+      "port": 27017,
+      "dbName": "development"
+    },
+    "credit": {
+      "initialLimit": 100,
+      "initialDays": 1
+    }
+  }
+}

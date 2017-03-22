@@ -1,0 +1,13 @@
+{
+  "api.test.guicomponents.menu.menuitem": {
+    "dbConfig": {
+      "host": "localhost.localdomain",
+      "port": 27017,
+      "dbName": "testing"
+    },
+    "credit": {
+      "initialLimit": 100,
+      "initialDays": 1
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "default_set": {
+    "dbConfig": {
+      "host": "localhost",
+      "port": 27017,
+      "dbName": "api.default_set.guicomponents.menu.menuitem"
+    },
+    "credit": {
+      "initialLimit": 100,
+      "initialDays": 1
+    }
+  }
+}
